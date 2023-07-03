@@ -101,7 +101,7 @@ def simulate_walks(G, num_walks, walk_length,matrix,is_directed,p,q):
     '''
     walks = []
     links = list(G.edges(data = True))
-    print()'Walk iteration:')
+    print('Walk iteration:')
     for walk_iter in range(num_walks):
         print(str(walk_iter+1), '/', str(num_walks))
         random.shuffle(links)
