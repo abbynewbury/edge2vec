@@ -76,7 +76,7 @@ def read_graph(edgeList,weighted=False, directed=False):
     if weighted:
         G = nx.read_edgelist(edgeList, nodetype=str, data=(('type',int),('weight',float),('id',int)), create_using=nx.DiGraph())
     else:
-        G = nx.read_edgelist(edgeList, nodetype=str,data=(('type',int),('id',int)), create_using=nx.DiGraph())
+        G = nx.read_edgelist(edgeList, nodetype=str,data=(('type',int),('id',str)), create_using=nx.DiGraph())
         for edge in G.edges():
             G[edge[0]][edge[1]]['weight'] = 1.0
 
