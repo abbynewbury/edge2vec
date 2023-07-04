@@ -188,7 +188,7 @@ def main(args):
     print("------begin to simulate walk---------")
     walks = simulate_walks(G,args.num_walks, args.walk_length,trans_matrix,args.directed,args.p,args.q) 
     # print walks  
-    model = Word2Vec(walks, size=args.dimensions, window=args.window_size, min_count=0, sg=1, workers=args.workers, iter=args.iter)
+    model = Word2Vec(walks, vector_size=args.dimensions, window=args.window_size, min_count=0, sg=1, workers=args.workers, epochs=args.iter)
     model.wv.save_word2vec_format(args.output)
 if __name__ == "__main__":
     args = parse_args()
